@@ -42,4 +42,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function smoketrackers(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany('App\Models\Smoketracker');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function smoketrackings(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany('App\Models\Smoketracker');
+    }
 }
