@@ -11,8 +11,15 @@ class SmoketrackingController extends Controller
      */
     public function index()
     {
-        //
-        ddd('YES');
+
+        $user = auth()->user();
+
+        $smk = $user->smoketrackings;
+
+        return inertia()->render('Models/Smoke/Index', [
+            'smoketrackings' => $smk,
+            'today' => $user->smoketrackings()->where('created_at', '>', today())->orderByDesc('created_at')->get(),
+        ]);
     }
 
     /**

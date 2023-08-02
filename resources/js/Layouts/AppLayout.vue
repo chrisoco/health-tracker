@@ -119,7 +119,11 @@ import { Link } from '@inertiajs/vue3';
                     </nav>
                     <!-- Page Content -->
                     <main>
-                        <slot />
+                        <div class="max-w-7xl mx-auto lg:px-8 pt-2">
+                            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                                <slot />
+                            </div>
+                        </div>
                     </main>
                 </div>
 
