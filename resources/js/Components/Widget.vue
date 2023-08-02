@@ -1,10 +1,7 @@
-<!-- MyComponent.vue -->
 <template>
-  
   <div :class="computedClasses">
     <slot />
   </div>
-
 </template>
 
 <script>

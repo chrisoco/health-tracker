@@ -6,14 +6,15 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-    <Head title="Smoke Tracker" />
+    <Head title="Smoking Tracker" />
 
     <AppLayout>
         <template #header>
-            Example
+            Smoking Tracker
         </template>
 
         <Widget>
+          <p>$$ Wasted</p>
           <button class="btn btn-primary">New Smoke</button>
         </Widget>
 
@@ -36,6 +37,10 @@ import { Head } from '@inertiajs/vue3';
               </tr>
             </tbody>
           </table>
+        </Widget>
+
+        <Widget :class="'lg:col-span-3'">
+          Charts Aye
         </Widget>
 
     </AppLayout>
