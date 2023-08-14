@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Smoke;
 use Illuminate\Http\Request;
 
 class SmokeController extends Controller
@@ -33,7 +34,12 @@ class SmokeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        Smoke::create([
+            'user_id' => auth()->user()->id,
+        ]);
+
+        return redirect()->route('smk.index')->with('message', 'Entry Added: New Smoke');
     }
 
     /**
