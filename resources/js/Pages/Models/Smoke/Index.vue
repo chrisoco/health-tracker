@@ -15,7 +15,7 @@ import { Head } from '@inertiajs/vue3';
 
         <Widget>
           <p>$$ Wasted</p>
-          <button class="btn btn-primary">New Smoke</button>
+          <button class="btn btn-success hover:bg-green-500">New Smoke</button>
         </Widget>
 
         <Widget :class="'lg:col-span-2'">

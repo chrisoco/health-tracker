@@ -46,16 +46,8 @@ class User extends Authenticatable
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function smoketrackers(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function smokes(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany('App\Models\Smoketracker');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function smoketrackings(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany('App\Models\Smoketracker');
+        return $this->hasMany('App\Models\Smoke');
     }
 }

@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $updated_at
  * @property User $user
  */
-class Smoketracker extends Model
+class Smoke extends Model
 {
     use HasFactory;
     /**
@@ -20,7 +20,7 @@ class Smoketracker extends Model
      * 
      * @var string
      */
-    protected $table = 'smoketrackings';
+    protected $table = 'smokes';
 
     /**
      * @var array

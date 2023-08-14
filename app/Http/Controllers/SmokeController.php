@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class SmoketrackingController extends Controller
+class SmokeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +14,9 @@ class SmoketrackingController extends Controller
 
         $user = auth()->user();
 
-        $smk = $user->smoketrackings;
-
         return inertia()->render('Models/Smoke/Index', [
-            'smoketrackings' => $smk,
-            'today' => $user->smoketrackings()->where('created_at', '>', today())->orderByDesc('created_at')->get(),
+            'smokes' => $user->smokes,
+            'today' => $user->smokes()->where('created_at', '>', today())->orderByDesc('created_at')->get(),
         ]);
     }
 

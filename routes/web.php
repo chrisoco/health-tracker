@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\SmoketrackingController;
+use App\Http\Controllers\SmokeController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -46,7 +46,7 @@ Route::middleware(['auth', 'web'])->group(function () {
 
     /** New Stuff */
     Route::resources([
-        'smk' => SmoketrackingController::class,
+        'smk' => SmokeController::class,
 
     ]);
 });

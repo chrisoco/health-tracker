@@ -2,21 +2,21 @@
 
 namespace Database\Factories;
 
-use App\Models\Smoketracker;
+use App\Models\Smoke;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Smoketracker>
  */
-class SmoketrackerFactory extends Factory
+class SmokeFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Smoketracker::class;
+    protected $model = Smoke::class;
 
     /**
      * Define the model's default state.
