@@ -1,6 +1,6 @@
 <script setup>
   import AppLayout from '@/Layouts/AppLayout.vue';
-  import { Head, useForm } from '@inertiajs/vue3';
+  import { Head, useForm, router } from '@inertiajs/vue3';
   import Widget from '@/Components/Widget.vue';
   import moment from "moment";
 
@@ -10,6 +10,12 @@
   })
 
   const smokeForm = useForm({})
+
+  function destroy(id) {
+    if(confirm('Are you sure?')) {
+      router.delete(route('smk.destroy', id));
+    }
+  }
 
 </script>
 
@@ -43,7 +49,9 @@
               <tr v-for="(entry, index) in today" :key="index" class="hover">
                 <th>{{ today.length - index }}</th>
                 <td>{{ moment(entry.created_at).format('HH:mm') }}</td>
-                <th class="p-0"><button class="btn btn-sm btn-outline btn-error">Delete</button></th>
+                <th class="p-0">
+                  <button @click="destroy(entry.id)" class="btn btn-sm btn-outline btn-error">Delete</button>
+                </th>
               </tr>
             </tbody>
           </table>

@@ -69,8 +69,13 @@ class SmokeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $smoke = Smoke::findOrFail($id);
+        $date  = $smoke->created_at->format('H:i');
+
+        $smoke->delete();
+
+        return redirect()->route('smk.index')->with('message', 'Smoke entry deleted: ' . $date);
     }
 }
