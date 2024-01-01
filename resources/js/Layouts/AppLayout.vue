@@ -4,6 +4,7 @@ import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import SideNavLink from '@/Components/SideNavLink.vue';
+import ToastList from '@/Components/ToastList.vue';
 import { Link } from '@inertiajs/vue3';
 </script>
 
@@ -121,10 +122,10 @@ import { Link } from '@inertiajs/vue3';
                     <main>
                         <div class="max-w-7xl mx-auto lg:px-8 pt-2">
                             <!-- Notification -->
-                            <div v-if="$page.props.flash.message || true" class="alert alert-success mb-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                Entry Added: New Smoke
-                            </div>
+                            
+                            <ToastList />
+
+
                             <!-- Notification end -->
                             <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
                                 <slot />

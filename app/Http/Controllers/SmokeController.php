@@ -35,11 +35,11 @@ class SmokeController extends Controller
     public function store(Request $request)
     {
 
-        Smoke::create([
+        $smoke = Smoke::create([
             'user_id' => auth()->user()->id,
         ]);
 
-        return redirect()->route('smk.index')->with('message', 'Entry Added: New Smoke');
+        return redirect()->route('smk.index')->with('message', 'New smoke entry added: ' . $smoke->created_at->format('H:i'));
     }
 
     /**

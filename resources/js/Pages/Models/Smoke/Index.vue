@@ -40,7 +40,7 @@
             </thead>
             <tbody>
               <!-- row 1 -->
-              <tr v-for="(entry, index) in  today" class="hover">
+              <tr v-for="(entry, index) in today" :key="index" class="hover">
                 <th>{{ today.length - index }}</th>
                 <td>{{ moment(entry.created_at).format('HH:mm') }}</td>
                 <th class="p-0"><button class="btn btn-sm btn-outline btn-error">Delete</button></th>
